@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Optional: auto-start once the prototype is reliable. See README. -->
+<!-- Install: cp com.apple.handy-jev-postprocessing.plist ~/Library/LaunchAgents/ -->
+<!-- Then: launchctl load ~/Library/LaunchAgents/com.apple.handy-jev-postprocessing.plist -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.apple.handy-jev-postprocessing</string>
+  <key>ProgramArguments</key>
+  <array>
+    <!-- Adjust all three paths to this machine. (`which node` for the first.) -->
+    <string>/opt/homebrew/bin/node</string>
+    <string>/PATH/TO/handy-jev-postprocessing/dist/src/server.js</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/PATH/TO/handy-jev-postprocessing</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/tmp/handy-jev-postprocessing.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/handy-jev-postprocessing.err</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <!-- All tuning is hardcoded in src/config.ts. Only the key is env,
+         e.g. via `launchctl setenv OPENROUTER_API_KEY …` (never here). -->
+  </dict>
+</dict>
+</plist>

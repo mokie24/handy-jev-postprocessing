@@ -1,0 +1,118 @@
+[
+  {
+    "name": "repair-sorry",
+    "kind": "correction",
+    "input": "The meeting is Thursday, sorry, Friday.",
+    "expected": "The meeting is Friday.",
+    "notes": "target=Thursday source=Friday cleanup=sorry"
+  },
+  {
+    "name": "repair-sorry-with-tail",
+    "kind": "correction",
+    "input": "The meeting is Thursday, sorry, Friday at three.",
+    "expected": "The meeting is Friday at three.",
+    "notes": "canonical example from spec"
+  },
+  {
+    "name": "repair-no-fifty",
+    "kind": "correction",
+    "input": "I need fifteen, no, fifty copies.",
+    "expected": "I need fifty copies.",
+    "notes": "target=fifteen source=fifty cleanup=no"
+  },
+  {
+    "name": "repair-tickets",
+    "kind": "correction",
+    "input": "Book four tickets. No, three.",
+    "expected": "Book three tickets.",
+    "notes": "target=four source=three cleanup=No..three; tickets stays"
+  },
+  {
+    "name": "delete-repetition",
+    "kind": "correction",
+    "input": "I I think that works.",
+    "expected": "I think that works.",
+    "notes": "delete duplicated I"
+  },
+  {
+    "name": "format-paragraph",
+    "kind": "format",
+    "input": "Project update new paragraph migration is complete.",
+    "expected": "Project update\n\nmigration is complete.",
+    "notes": "command span 'new paragraph' -> \\n\\n; case preserved (no generated capitalization)"
+  },
+  {
+    "name": "two-iterations",
+    "kind": "correction",
+    "input": "Meet Peter Thursday, sorry Friday, at five, actually six.",
+    "expected": "Meet Peter Friday, at six.",
+    "notes": "needs two repair iterations"
+  },
+  {
+    "name": "negative-actually",
+    "kind": "unchanged",
+    "input": "It was actually a very useful meeting.",
+    "expected": "It was actually a very useful meeting."
+  },
+  {
+    "name": "negative-want",
+    "kind": "unchanged",
+    "input": "I don't want Thursday, I want Friday.",
+    "expected": "I don't want Thursday, I want Friday."
+  },
+  {
+    "name": "negative-said-sorry",
+    "kind": "unchanged",
+    "input": "She said sorry and left.",
+    "expected": "She said sorry and left."
+  },
+  {
+    "name": "negative-sorry-delay",
+    "kind": "unchanged",
+    "input": "Sorry for the delay.",
+    "expected": "Sorry for the delay."
+  },
+  {
+    "name": "negative-display-words",
+    "kind": "unchanged",
+    "input": "The button should display the words new paragraph.",
+    "expected": "The button should display the words new paragraph."
+  },
+  {
+    "name": "negative-no-think",
+    "kind": "unchanged",
+    "input": "No, I don't think that's correct.",
+    "expected": "No, I don't think that's correct."
+  },
+  {
+    "name": "negative-very-very",
+    "kind": "unchanged",
+    "input": "This is very, very important.",
+    "expected": "This is very, very important."
+  },
+  {
+    "name": "unsupported-professional",
+    "kind": "unchanged",
+    "input": "Make that more professional.",
+    "expected": "Make that more professional.",
+    "notes": "unsupported: needs generated wording"
+  },
+  {
+    "name": "unsupported-rewrite",
+    "kind": "unchanged",
+    "input": "Rewrite that more clearly.",
+    "expected": "Rewrite that more clearly."
+  },
+  {
+    "name": "unsupported-translate",
+    "kind": "unchanged",
+    "input": "Translate that into German.",
+    "expected": "Translate that into German."
+  },
+  {
+    "name": "unsupported-summarize",
+    "kind": "unchanged",
+    "input": "Summarize that for me.",
+    "expected": "Summarize that for me."
+  }
+]

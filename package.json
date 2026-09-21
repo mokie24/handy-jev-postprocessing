@@ -1,0 +1,29 @@
+{
+  "name": "handy-jev-postprocessing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local macOS service: Handy custom post-processing via TypeSafe Jev (OpenRouter Decisions API) + deterministic text edits.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx --watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "eval": "vitest run test/metrics.test.ts --reporter=verbose"
+  },
+  "dependencies": {
+    "fastify": "^5.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3",
+    "vitest": "^3.0.5"
+  }
+}
